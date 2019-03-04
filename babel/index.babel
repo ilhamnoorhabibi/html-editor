@@ -1,0 +1,212 @@
+//Redux
+const { render } = ReactDOM;
+const { Provider, connect } = ReactRedux;
+const { createStore } = Redux;
+const { Component } = React;
+
+const EDITORWINDOWSIZE = 'EDITORWINDOWSIZE';
+const PREVIEWWINDOWSIZE = 'PREVIEWWINDOWSIZE';
+const UPDATE = 'UPDATE';
+
+const placeholder = ` ( This initial text was taken from '@no-stack-dub-sack (github) / @no_stack_sub_sack (codepen)' pen (Simple React Markdown Previewer)
+# Welcome to my React Markdown Previewer!
+
+## This is a sub-heading...
+### And here's some other cool stuff:
+  
+Heres some code, \`<div></div>\`, between 2 backticks.
+
+\`\`\`
+// this is multi-line code:
+
+function anotherExample(firstLine, lastLine) {
+  if (firstLine == '\`\`\`' && lastLine == '\`\`\`') {
+    return multiLineCode;
+  }
+}
+\`\`\`
+  
+You can also make text **bold**... whoa!
+Or _italic_.
+Or... wait for it... **_both!_**
+And feel free to go crazy ~~crossing stuff out~~.
+
+There's also [links](https://www.freecodecamp.com), and
+> Block Quotes!
+
+And if you want to get really crazy, even tables:
+
+Wild Header | Crazy Header | Another Header?
+------------ | ------------- | ------------- 
+Your content can | be here, and it | can be here....
+And here. | Okay. | I think we get it.
+
+- And of course there are lists.
+  - Some are bulleted.
+     - With different indentation levels.
+        - That look like this.
+
+
+1. And there are numbererd lists too.
+1. Use just 1s if you want! 
+1. But the list goes on...
+- Even if you use dashes or asterisks.
+* And last but not least, let's not forget embedded images:
+
+![React Logo w/ Text](https://goo.gl/Umyytc)
+`;
+//Allow for line breaks with enter
+marked.setOptions({breaks: true});
+
+//Allow for links adhering to codepen rules i.e. _blank
+const renderer = new marked.Renderer();
+renderer.link = (href, title, text) => {
+  return `<a target="_blank" href="${href}">${text}` + '</a>'
+};
+const updatePreviewer = (text) => {
+  return {
+    type: UPDATE,
+    text: text
+  }
+};
+const editorWindowSize = (size) => {
+  return {
+    type: EDITORWINDOWSIZE,
+    windowSize: size
+  }
+};
+const previewWindowSize = (size) => {
+  return {
+    type: PREVIEWWINDOWSIZE,
+    windowSize: size
+  }
+};
+
+const reducer = (state = {text: placeholder, windowSize: ""}, action) => {
+ switch(action.type){
+   case UPDATE:
+     return Object.assign({}, state, {text: action.text});
+   case EDITORWINDOWSIZE:
+      return Object.assign({}, state, {editorSize: action.windowSize});
+   case PREVIEWWINDOWSIZE:
+      return Object.assign({}, state, {previewSize: action.windowSize});
+   default:
+     return state;
+ }
+};
+const store = createStore(reducer);
+
+
+//React
+class Toolbar extends Component{
+  constructor(props){
+    super(props);
+    this.maximizeWindow = this.maximizeWindow.bind(this);
+    this.minimizeWindow = this.minimizeWindow.bind(this);
+  }
+  maximizeWindow(e){
+    this.props.changeSize('window-max');
+  }
+  minimizeWindow(e){
+    this.props.changeSize('window-min');
+  }
+  render(){
+    return(
+      <div class="toolbar">
+        <p>{this.props.title}</p>
+        <div>
+        <button className="toolbar-button" onClick={this.minimizeWindow}><i class="fas fa-window-minimize"></i></button>
+        <button className="toolbar-button" onClick={this.maximizeWindow}><i class="fas fa-window-maximize"></i></button>
+        </div>
+      </div>
+    );
+  }
+}
+class Previewer extends Component{
+  render(){
+    const markdown = {
+      __html: marked(this.props.text, {renderer: renderer})
+    };
+    return(
+      <div class={"app-item "+this.props.size}>
+        <Toolbar 
+          title={"Markdown Previewer"}
+          changeSize={this.props.changeSize}/>
+        <div id="preview" dangerouslySetInnerHTML={markdown}/>
+      </div>
+    );
+  }
+}
+class Editor extends Component{
+  constructor(props){
+    super(props);
+    this.updateText = this.updateText.bind(this);
+  }
+  updateText(e){
+    this.props.update(e.target.value);
+  }
+  render(){
+    return(
+      <div className={"app-item "+ this.props.size}>
+        <Toolbar 
+          title={"Markdown Editor"}
+          changeSize={this.props.changeSize}/>
+        <textarea 
+          id="editor" 
+          value={this.props.text} 
+          onChange={this.updateText}></textarea>
+      </div>
+    );
+  }
+}
+class App extends Component{
+  constructor(props){
+    super(props);
+  }
+  render() {
+    return (
+      <div id="app">
+        <Editor className={this.props.size}
+          text={this.props.text}
+          update={this.props.update}
+          size={this.props.editorSize}
+          changeSize={this.props.changeEditorSize}/>
+        <Previewer
+          text={this.props.text}
+          size={this.props.previewSize}
+          changeSize={this.props.changePreviewSize}/>
+      </div>
+    );
+  }
+}
+
+//React-Redux
+const mapStateToProps = (state) => {
+  return {
+    text: state.text,
+    editorSize: state.editorSize,
+    previewSize: state.previewSize
+  };
+};
+const mapDispatchToProps = (dispatch) => {
+    return {
+      update: (text) => {
+        dispatch(updatePreviewer(text));
+      },
+      changeEditorSize: (size) => {
+        dispatch(editorWindowSize(size));
+      },
+      changePreviewSize: (size) => {
+        dispatch(previewWindowSize(size));
+      } 
+    }
+};
+
+const Container = connect(mapStateToProps, mapDispatchToProps)(App);
+
+//ReactDOM render of components
+render(
+  <Provider store={store}>
+    <Container/>
+  </Provider> , document.getElementById('root')
+);

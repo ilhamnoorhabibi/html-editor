@@ -1,0 +1,94 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: #0064ff;
+}
+
+body {
+  display: grid;
+  place-content: center center;
+  min-height: 100vh;
+  background-color: black;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), #009664);
+}
+
+#app {
+  width: 80vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 500px));
+  grid-gap: 20px;
+  justify-content: center;
+  transition: all 1s;
+}
+
+.app-item {
+  display: grid;
+  grid-template-rows: 30px 1fr;
+  width: 100%;
+  height: 200px;
+  box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.1);
+  transition: all 1s;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 5px;
+  background-color: #00c864;
+  color: white;
+  border-bottom: 1px solid black;
+}
+
+.toolbar-button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: white;
+}
+
+.toolbar-button:hover {
+  color: black;
+  cursor: pointer;
+}
+
+.toolbar-button:focus {
+  color: black;
+  outline: none;
+}
+
+#preview {
+  background-color: white;
+  padding: 10px;
+  margin: 0;
+  font-family: cambria;
+}
+
+#editor {
+  resize: none;
+  outline: none;
+  border: none;
+  padding: 10px;
+}
+
+#editor, #preview {
+  min-height: 100px;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+.window-min {
+  height: 100px;
+  padding: 0;
+  margin: 0;
+}
+
+.window-max {
+  height: 300px;
+}
