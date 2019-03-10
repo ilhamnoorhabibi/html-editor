@@ -1,0 +1,68 @@
+[259.301185608] 2019-03-03 10:49:44,972 - INFO - launcher: Starting sanity checks
+[259.301185608] 2019-03-03 10:49:44,972 - INFO - launcher: Checking for Python 3.5+
+[260.277986526] 2019-03-03 10:49:44,973 - INFO - launcher: Checking console encoding
+[260.277986526] 2019-03-03 10:49:44,973 - INFO - launcher: Setting console encoding to UTF-8
+[260.277986526] 2019-03-03 10:49:44,973 - INFO - launcher: Ensuring we're in the right environment
+[261.255502701] 2019-03-03 10:49:44,974 - INFO - launcher: Adding local bins/ folder to path
+[2607.034921646] 2019-03-03 10:49:47,320 - INFO - launcher: Required checks passed.
+[2608.011960983] 2019-03-03 10:49:47,321 - INFO - launcher: Optional checks passed.
+[2608.011960983] 2019-03-03 10:49:47,321 - INFO - launcher: Moving old musicbot log
+
+######################### PRE-RUN SANITY CHECKS PASSED #########################
+
+[8.8522071838378906] 2019-03-03 10:49:53,565 - WARNING - musicbot.config | In config.py::MainThread(10928), line 116 in run_checks: i18n file does not exist. Trying to fallback to config/i18n/en.json.
+[8.8531847000122070] 2019-03-03 10:49:53,566 - INFO - musicbot.config | In config.py::MainThread(10928), line 127 in run_checks: Using i18n: config/i18n/en.json
+[8.8610010147094727] 2019-03-03 10:49:53,574 - DEBUG - musicbot.bot | In bot.py::MainThread(10928), line 226 in _setup_logging: Set logging level to INFO
+[8.8688180446624756] 2019-03-03 10:49:53,582 - DEBUG - musicbot.json | In json.py::MainThread(10928), line 8 in __init__: Init JSON obj with config/i18n/en.json
+[8.9147443771362305] 2019-03-03 10:49:53,628 - INFO - musicbot.bot | In bot.py::MainThread(10928), line 91 in __init__: Starting MusicBot 1.9.8_4
+[8.9157214164733887] 2019-03-03 10:49:53,629 - INFO - musicbot.bot | In bot.py::MainThread(10928), line 97 in __init__: Loaded autoplaylist with 2531 entries
+[12.2802381515502930] 2019-03-03 10:49:56,993 - DEBUG - musicbot.bot | In bot.py::MainThread(10928), line 922 in on_ready: Connection established, ready to go.
+[12.2802381515502930] 2019-03-03 10:49:56,993 - DEBUG - musicbot.bot | In bot.py::MainThread(10928), line 340 in _cache_app_info: Caching app info
+[12.5489530563354492] 2019-03-03 10:49:57,262 - DEBUG - musicbot.bot | In bot.py::MainThread(10928), line 744 in _scheck_ensure_env: Ensuring data folders exist
+[12.5557923316955566] 2019-03-03 10:49:57,269 - DEBUG - musicbot.bot | In bot.py::MainThread(10928), line 760 in _scheck_server_permissions: Checking server permissions
+[12.5557923316955566] 2019-03-03 10:49:57,269 - DEBUG - musicbot.bot | In bot.py::MainThread(10928), line 764 in _scheck_autoplaylist: Auditing autoplaylist
+[12.5567698478698730] 2019-03-03 10:49:57,270 - DEBUG - musicbot.bot | In bot.py::MainThread(10928), line 768 in _scheck_configs: Validating config
+[12.5567698478698730] 2019-03-03 10:49:57,270 - DEBUG - musicbot.config | In config.py::MainThread(10928), line 217 in async_validate: Validating options...
+[12.5567698478698730] 2019-03-03 10:49:57,270 - DEBUG - musicbot.bot | In bot.py::MainThread(10928), line 771 in _scheck_configs: Validating permissions config
+[12.5567698478698730] 2019-03-03 10:49:57,270 - DEBUG - musicbot.permissions | In permissions.py::MainThread(10928), line 94 in async_validate: Validating permissions...
+[12.5567698478698730] 2019-03-03 10:49:57,270 - INFO - musicbot.bot | In bot.py::MainThread(10928), line 939 in on_ready: Connected: 550341907436404737/Mas Adi#2354
+[12.5577466487884521] 2019-03-03 10:49:57,271 - INFO - musicbot.bot | In bot.py::MainThread(10928), line 947 in on_ready: Owner:     317697991991361536/Bi#4657
+
+[12.5587241649627686] 2019-03-03 10:49:57,272 - INFO - musicbot.bot | In bot.py::MainThread(10928), line 950 in on_ready: Guild List:
+[12.5594851970672607] 2019-03-03 10:49:57,273 - INFO - musicbot.bot | In bot.py::MainThread(10928), line 954 in on_ready:  - The Longors Adventure
+[12.5594851970672607] 2019-03-03 10:49:57,273 - INFO - musicbot.bot | In bot.py::MainThread(10928), line 954 in on_ready:  - Food and Beverage
+[12.5604479312896729] 2019-03-03 10:49:57,274 - INFO - musicbot.bot | In bot.py::MainThread(10928), line 954 in on_ready:  - Butterfly Technology
+[12.5604479312896729] 2019-03-03 10:49:57,274 - INFO - musicbot.bot | In bot.py::MainThread(10928), line 1010 in on_ready: Not bound to any text channels
+[12.5614249706268311] 2019-03-03 10:49:57,275 - INFO - musicbot.bot | In bot.py::MainThread(10928), line 1036 in on_ready: Not autojoining any voice channels
+[16.3674297332763672] 2019-03-03 10:50:01,081 - INFO - musicbot.bot | In bot.py::MainThread(10928), line 2644 in on_message: 317697991991361536/Bi#4657: #summon
+[17.2181241512298584] 2019-03-03 10:50:01,931 - DEBUG - musicbot.bot | In bot.py::MainThread(10928), line 704 in deserialize_queue: Deserializing queue for 402170299082211330
+[17.6216850280761719] 2019-03-03 10:50:02,335 - DEBUG - musicbot.bot | In bot.py::MainThread(10928), line 423 in get_player: Created player via deserialization for guild 402170299082211330 with 38 entries
+[17.6216850280761719] 2019-03-03 10:50:02,335 - INFO - musicbot.bot | In bot.py::MainThread(10928), line 1893 in cmd_summon: Joining Food and Beverage/Lobby
+[17.6236388683319092] 2019-03-03 10:50:02,337 - DEBUG - musicbot.entry | In entry.py::MainThread(10928), line 56 in get_ready_future: Created future for audio_cache\youtube-BNEFA9MjSGM-Dialog_Senja_-_Lara_Lyric_Video.webm
+[17.6236388683319092] 2019-03-03 10:50:02,337 - DEBUG - musicbot.entry | In entry.py::MainThread(10928), line 56 in get_ready_future: Created future for audio_cache\youtube-XJXKfq26N_w-Fiersa_Besari_ft_Tantri_-_Waktu_Yang_Salah_unofficial_lirik_video.webm
+[17.6236388683319092] 2019-03-03 10:50:02,337 - FFMPEG - musicbot.player | In player.py::MainThread(10928), line 273 in _play: Creating player with options: -nostdin -vn audio_cache\youtube-XJXKfq26N_w-Fiersa_Besari_ft_Tantri_-_Waktu_Yang_Salah_unofficial_lirik_video.webm
+[17.7956166267395020] 2019-03-03 10:50:02,509 - DEBUG - musicbot.player | In player.py::MainThread(10928), line 284 in _play: Playing <discord.player.PCMVolumeTransformer object at 0x056B6730> using <discord.voice_client.VoiceClient object at 0x056B6A30>
+[17.7965934276580811] 2019-03-03 10:50:02,510 - DEBUG - musicbot.bot | In bot.py::MainThread(10928), line 458 in on_player_play: Running on_player_play
+[17.7975730895996094] 2019-03-03 10:50:02,511 - DEBUG - musicbot.bot | In bot.py::MainThread(10928), line 680 in serialize_queue: Serializing queue for 402170299082211330
+[17.8552224636077881] 2019-03-03 10:50:02,568 - FFMPEG - musicbot.player | In player.py::stderr reader(5572), line 382 in filter_stderr: Data from ffmpeg: b'audio_cache\\youtube-XJXKfq26N_w-Fiersa_Besari_ft_Tantri_-_Waktu_Yang_Salah_unofficial_lirik_video.webm: No such file or directory\r\n'
+[17.8591313362121582] 2019-03-03 10:50:02,572 - DEBUG - musicbot.bot | In bot.py::MainThread(10928), line 515 in on_player_finished_playing: Running on_player_finished_playing
+[17.8591313362121582] 2019-03-03 10:50:02,572 - DEBUG - musicbot.bot | In bot.py::MainThread(10928), line 680 in serialize_queue: Serializing queue for 402170299082211330
+[17.8669476509094238] 2019-03-03 10:50:02,580 - DEBUG - musicbot.entry | In entry.py::MainThread(10928), line 56 in get_ready_future: Created future for None
+[17.8669476509094238] 2019-03-03 10:50:02,580 - DEBUG - musicbot.entry | In entry.py::MainThread(10928), line 56 in get_ready_future: Created future for audio_cache\youtube-BNEFA9MjSGM-Dialog_Senja_-_Lara_Lyric_Video.webm
+[17.8669476509094238] 2019-03-03 10:50:02,580 - FFMPEG - musicbot.player | In player.py::MainThread(10928), line 273 in _play: Creating player with options: -nostdin -vn audio_cache\youtube-BNEFA9MjSGM-Dialog_Senja_-_Lara_Lyric_Video.webm
+[17.8689022064208984] 2019-03-03 10:50:02,582 - DEBUG - musicbot.player | In player.py::MainThread(10928), line 284 in _play: Playing <discord.player.PCMVolumeTransformer object at 0x0630B3F0> using <discord.voice_client.VoiceClient object at 0x056B6A30>
+[17.8708562850952148] 2019-03-03 10:50:02,584 - INFO - musicbot.entry | In entry.py::MainThread(10928), line 292 in _really_download: Download started: https://www.youtube.com/watch?v=P2s2LCFFACI
+[17.8763370513916016] 2019-03-03 10:50:02,589 - DEBUG - musicbot.bot | In bot.py::MainThread(10928), line 458 in on_player_play: Running on_player_play
+[17.8939254283905029] 2019-03-03 10:50:02,607 - DEBUG - musicbot.bot | In bot.py::MainThread(10928), line 680 in serialize_queue: Serializing queue for 402170299082211330
+[17.8997883796691895] 2019-03-03 10:50:02,613 - FFMPEG - musicbot.player | In player.py::stderr reader(8588), line 382 in filter_stderr: Data from ffmpeg: b'audio_cache\\youtube-BNEFA9MjSGM-Dialog_Senja_-_Lara_Lyric_Video.webm: No such file or directory\r\n'
+[17.9750287532806396] 2019-03-03 10:50:02,688 - DEBUG - musicbot.bot | In bot.py::MainThread(10928), line 515 in on_player_finished_playing: Running on_player_finished_playing
+[17.9808912277221680] 2019-03-03 10:50:02,694 - DEBUG - musicbot.bot | In bot.py::MainThread(10928), line 680 in serialize_queue: Serializing queue for 402170299082211330
+[18.0698108673095703] 2019-03-03 10:50:02,783 - DEBUG - musicbot.entry | In entry.py::MainThread(10928), line 56 in get_ready_future: Created future for None
+[18.0756745338439941] 2019-03-03 10:50:02,789 - DEBUG - musicbot.entry | In entry.py::MainThread(10928), line 56 in get_ready_future: Created future for None
+[18.1225774288177490] 2019-03-03 10:50:02,836 - INFO - musicbot.entry | In entry.py::MainThread(10928), line 292 in _really_download: Download started: https://www.youtube.com/watch?v=75aBKInkybs
+[21.0513124465942383] 2019-03-03 10:50:05,764 - INFO - musicbot.entry | In entry.py::MainThread(10928), line 302 in _really_download: Download complete: https://www.youtube.com/watch?v=75aBKInkybs
+[21.8564796447753906] 2019-03-03 10:50:06,570 - INFO - musicbot.entry | In entry.py::MainThread(10928), line 302 in _really_download: Download complete: https://www.youtube.com/watch?v=P2s2LCFFACI
+[21.8613653182983398] 2019-03-03 10:50:06,574 - FFMPEG - musicbot.player | In player.py::MainThread(10928), line 273 in _play: Creating player with options: -nostdin -vn audio_cache\youtube-P2s2LCFFACI-Bondan_Prakoso_-_Kau_Tak_Sendiri_Official_Music_Video.webm
+[21.8642964363098145] 2019-03-03 10:50:06,577 - DEBUG - musicbot.player | In player.py::MainThread(10928), line 284 in _play: Playing <discord.player.PCMVolumeTransformer object at 0x05929F10> using <discord.voice_client.VoiceClient object at 0x056B6A30>
+[21.8652741909027100] 2019-03-03 10:50:06,578 - DEBUG - musicbot.bot | In bot.py::MainThread(10928), line 458 in on_player_play: Running on_player_play
+[21.8662509918212891] 2019-03-03 10:50:06,579 - DEBUG - musicbot.bot | In bot.py::MainThread(10928), line 680 in serialize_queue: Serializing queue for 402170299082211330
